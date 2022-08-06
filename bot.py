@@ -12,11 +12,11 @@ logging.basicConfig(level=logging.INFO)
 #load apiKey
 def configure():
     load_dotenv()
-
 configure()
+riotApiKey = os.getenv('riotApiKey')
+discordApiKey = os.getenv('discordApiKey')
 
 #riotApi initalization
-riotApiKey = os.getenv('riotApiKey')
 watcher = TftWatcher(riotApiKey)
 region = "NA1"
 
@@ -41,4 +41,4 @@ async def rank(ctx, summonerName):
         if err.response.status_code == 429:
             await ctx.send("Please wait () seconds before trying again".format(err.headers['Retry-After']))
 
-client.run('MTAwNTE1OTc0NjUwNjA4NDUxNA.Gz4N9v.10fFu4AxLoQk4sdaTVK7a4cPLATZPv1AK5ot60')
+client.run('discordApiKey')
